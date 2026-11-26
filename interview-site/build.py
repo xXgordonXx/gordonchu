@@ -19,10 +19,21 @@ def redact(text: str) -> str:
     return NAME.sub("面試官", "\n".join(out))
 
 
+DOC_URL = "https://claude.ai/artifact/Fa5LA7pEiuTZq7wDShTFLY"
+PLACEHOLDER = re.compile(r"&#91;embedded content: (.+?)\\\]")
+BYLINE = re.compile(r"^[A-Z][a-z]{2} \d{1,2}, \d{4} · @\S+\s*$", re.M)
+
+
+def clean(text: str) -> str:
+    """Diagrams don't survive Markdown export: point to the doc instead. Drop doc bylines."""
+    text = PLACEHOLDER.sub(lambda m: f"> 圖：{m.group(1)}（喺 [doc]({DOC_URL}) 睇原圖）", text)
+    return BYLINE.sub("", text)
+
+
 def bundle(public: bool) -> dict:
     docs = {}
     for p in sorted((root / "content").glob("*.md")):
-        t = p.read_text(encoding="utf-8")
+        t = clean(p.read_text(encoding="utf-8"))
         docs[p.stem] = redact(t) if public else t
     results = json.loads((root / "demo/results.json").read_text())
     with open(root / "demo/exception_report.csv", newline="") as f:
