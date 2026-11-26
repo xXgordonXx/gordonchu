@@ -67,6 +67,7 @@ window.EXTRA_QS = [
   { cat: "technical", q: "What would you deliver in your first 90 days?", hint: "首頁 90 日計劃：1–30 日學流程同 data owner，31–60 日 1–2 個 use case，61–90 日上線同量度" },
 
   // ---- AI (gaps not in the doc table) ----
+  { cat: "ai", q: "What does AI enablement in finance mean to you?", hint: "唔止係用 Copilot：數據準備好、揀 use case、做試點、governance 同 controls、量度成效、培訓用家、上線後監察" },
   { cat: "ai", q: "How would you use Copilot in Excel or Power BI in your daily work?", hint: "寫 formula / DAX 初稿、解釋舊 workflow、寫文件；結果一定自己核對" },
   { cat: "ai", q: "What is RAG, and is there a finance use case for it?", hint: "先搵相關文件再生成答案；例如 accounting policy / SOP 問答；要有來源引用" },
   { cat: "ai", q: "How do you prepare data so that AI can use it?", hint: "乾淨、定義清楚、有 governance 同權限、敏感資料 masking；所以先做 trusted data" },
