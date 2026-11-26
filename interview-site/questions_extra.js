@@ -13,7 +13,7 @@ window.EXTRA_QS = [
   { cat: "behavioural", q: "How do you handle a request when you don't fully understand the business logic?", hint: "問 data owner、用真實例子確認、寫低假設俾對方 sign off" },
   { cat: "behavioural", q: "What kind of manager or team do you work best with?", hint: "誠實但正面；配合呢個 team 係 transformation、要自己主動" },
   { cat: "behavioural", q: "What is your notice period and expected salary?", hint: "準備一個數字範圍同 notice period；唔好即場估" },
-  { cat: "behavioural", q: "Tell me about a time you disagreed with a stakeholder. How did you handle it?", hint: "先理解對方點解、擺事實（影響、風險、日期）、俾選擇唔係淨係講唔得、決定權喺 owner、決定咗就全力配合" },
+  { cat: "behavioural", q: "Tell me about a time you disagreed with a stakeholder. How did you handle it?", hint: "搵出唔同意嘅位 → 搵 common ground → 磨合、俾選擇 → 真係唔得先 escalate；唔好一開波就搵老闆" },
   { cat: "behavioural", q: "Do you have any questions for us?", hint: "用首頁嘅反問問題；最少準備三條" },
 
   // ---- Technical: Alteryx ----
