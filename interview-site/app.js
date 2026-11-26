@@ -313,7 +313,7 @@
       }).join("")}`;
   }
 
-  const SHEETS = [["ifrs17", "IFRS 17 同月結"], ["alteryx-sql", "Alteryx / SQL"], ["transformation", "Transformation"], ["dwh-dg", "DWH / DG"], ["other", "其他重點"]];
+  const SHEETS = [["phases", "三步走"], ["ifrs17", "IFRS 17 同月結"], ["alteryx-sql", "Alteryx / SQL"], ["transformation", "Transformation"], ["dwh-dg", "DWH / DG"], ["other", "其他重點"]];
   const sheetDocs = (key) => Object.keys(DOCS).filter((d) => d === key || d.startsWith(key + "-")).sort();
   function pageSheets() {
     const avail = SHEETS.filter(([k]) => sheetDocs(k).length);
