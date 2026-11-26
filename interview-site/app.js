@@ -146,8 +146,8 @@
   const SUG = SITE.suggested || {};
   function suggestBlock(q) {
     const g = SUG[q.q]; if (!g) return "";
-    return `<div class="suggest"><div class="label">建議答案（根據你講嘅）</div>
-      ${g.note ? `<p class="muted">${esc(g.note)}</p>` : ""}<div class="md">${md(g.text)}</div>
+    return `<div class="suggest"><div class="label">評語同建議英文答案（根據你寫嘅）</div>
+      ${g.note ? `<p class="muted"><b>評語：</b>${esc(g.note)}</p>` : ""}<div class="md">${md(g.text)}</div>
       ${g.short ? `<div class="label">短版（20 秒）</div><p>${esc(g.short)}</p>` : ""}
       <button class="btn ghost useSug" data-sug="${q.id}">用呢個做我嘅答案起點</button></div>`;
   }
