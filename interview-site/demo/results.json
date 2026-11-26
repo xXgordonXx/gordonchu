@@ -1,0 +1,40 @@
+{
+  "admin_records": 200,
+  "gl_records": 202,
+  "gl_late_rows": 4,
+  "matched": 189,
+  "match_rate": 94.5,
+  "matched_after_cleansing": 12,
+  "rounding_within_tol": 5,
+  "refund_flagged": 1,
+  "exceptions": {
+    "DQ fail: null premium": 1,
+    "Duplicate GL posting": 3,
+    "FX rate difference": 3,
+    "GL line for DQ-failed policy": 1,
+    "GL only: no policy": 2,
+    "Missing in GL": 3,
+    "Timing: posted next period": 4
+  },
+  "exception_amounts": {
+    "DQ fail: null premium": 0.0,
+    "Duplicate GL posting": 55663.52,
+    "FX rate difference": 4144.57,
+    "GL line for DQ-failed policy": 110851.77,
+    "GL only: no policy": 7030.5,
+    "Missing in GL": 32779.12,
+    "Timing: posted next period": 53878.54
+  },
+  "exception_total": 17,
+  "admin_exception_rows": 11,
+  "gl_exception_rows": 13,
+  "control": {
+    "admin_total": 4118264.77,
+    "matched_admin": 3570966.53,
+    "admin_exception_amt": 547298.24,
+    "gl_total": 4263178.01,
+    "matched_gl": 3570968.53,
+    "gl_exception_amt": 692209.48,
+    "matched_rounding_diff": -2.0
+  }
+}

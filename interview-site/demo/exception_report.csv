@@ -1,0 +1,18 @@
+side,reason,policy,amount_hkd
+Admin,DQ fail: null premium,00010030,0.0
+GL,Duplicate GL posting,00010179,23304.65
+GL,Duplicate GL posting,00010113,17381.3
+GL,Duplicate GL posting,00010036,14977.57
+Both,FX rate difference,00010130,-906.33
+Both,FX rate difference,00010150,-1552.04
+Both,FX rate difference,00010190,-1686.2
+Admin,Timing: posted next period,00010013,17842.78
+Admin,Timing: posted next period,00010014,3189.47
+Admin,Missing in GL,00010015,18997.09
+Admin,Timing: posted next period,00010059,20271.83
+Admin,Missing in GL,00010084,1935.47
+Admin,Timing: posted next period,00010123,12574.46
+Admin,Missing in GL,00010193,11846.56
+GL,GL line for DQ-failed policy,00010030,110851.77
+GL,GL only: no policy,99990001,5200.0
+GL,GL only: no policy,99990002,1830.5
