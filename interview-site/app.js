@@ -143,7 +143,7 @@
     }
     return `<textarea id="t-${q.id}" data-qid="${q.id}" placeholder="寫你嘅答案，或者寫用邊個 use case / STAR 故事（例如「use case 2」）">${esc(a.text || "")}</textarea>`;
   }
-  const SUG = window.SUGGESTED || {};
+  const SUG = SITE.suggested || {};
   function suggestBlock(q) {
     const g = SUG[q.q]; if (!g) return "";
     return `<div class="suggest"><div class="label">建議答案（根據你講嘅）</div>

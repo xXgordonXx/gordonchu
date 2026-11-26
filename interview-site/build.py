@@ -27,7 +27,9 @@ def bundle(public: bool) -> dict:
     results = json.loads((root / "demo/results.json").read_text())
     with open(root / "demo/exception_report.csv", newline="") as f:
         exceptions = list(csv.DictReader(f))
-    return {"docs": docs, "demo": {"results": results, "exceptions": exceptions}}
+    sug = root / "content/suggested.json"
+    suggested = json.loads(sug.read_text(encoding="utf-8")) if sug.exists() else {}
+    return {"docs": docs, "suggested": suggested, "demo": {"results": results, "exceptions": exceptions}}
 
 
 def js_data(obj) -> str:
