@@ -143,12 +143,27 @@
     }
     return `<textarea id="t-${q.id}" data-qid="${q.id}" placeholder="寫你嘅答案，或者寫用邊個 use case / STAR 故事（例如「use case 2」）">${esc(a.text || "")}</textarea>`;
   }
+  const SUG = window.SUGGESTED || {};
+  function suggestBlock(q) {
+    const g = SUG[q.q]; if (!g) return "";
+    return `<div class="suggest"><div class="label">建議答案（根據你講嘅）</div>
+      ${g.note ? `<p class="muted">${esc(g.note)}</p>` : ""}<div class="md">${md(g.text)}</div>
+      ${g.short ? `<div class="label">短版（20 秒）</div><p>${esc(g.short)}</p>` : ""}
+      <button class="btn ghost useSug" data-sug="${q.id}">用呢個做我嘅答案起點</button></div>`;
+  }
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest && e.target.closest(".useSug"); if (!b) return;
+    const q = QBYID[b.dataset.sug]; const ta = document.getElementById("t-" + q.id); if (!ta) return;
+    if (ta.value.trim() && !b.dataset.confirm) { b.dataset.confirm = "1"; b.textContent = "會覆蓋你已寫嘅答案，再撳一次確認"; return; }
+    ta.value = SUG[q.q].text; ta.dispatchEvent(new Event("input", { bubbles: true })); b.textContent = "已放入，可以照改"; delete b.dataset.confirm;
+  });
   function questionCard(q, opts) {
     opts = opts || {};
     return `<article class="card qcard" data-mark="${q.id}">
       <p class="q"><span class="tag">${CAT_LABEL[q.cat]}</span>${mdInline(q.q)}<span class="tick" aria-label="已寫">✓</span></p>
       ${q.hint ? `<div class="label">面試官想聽</div><div class="hint">${mdInline(q.hint)}</div>` : ""}
       ${q.docAns ? `<div class="label">Doc 入面嘅答案</div><div class="md">${md(q.docAns)}</div>` : ""}
+      ${suggestBlock(q)}
       ${opts.hideAnswer ? "" : `<div class="label">我嘅答案</div>${answerArea(q)}<div class="saved muted" aria-live="polite"></div>`}
     </article>`;
   }

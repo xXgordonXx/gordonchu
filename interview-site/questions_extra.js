@@ -75,3 +75,20 @@ window.EXTRA_QS = [
   // ---- Performance (gaps) ----
   { cat: "performance", q: "Your reconciliation used to run in minutes and now takes an hour. How do you investigate?", hint: "數據量變咗？新 join fan-out？source 慢？先量度每一步時間，再改最大嗰個" },
 ];
+
+/* Suggested answers written from what the candidate said (keyed by exact question text). */
+window.SUGGESTED = {
+  "點解離開而家份工？": {
+    note: "根據你講嘅：搵 mentor、role model、想繼續學；每日都學，連面試都係 test and learn。講法要向前望（想去邊），唔好令人覺得係而家公司冇人教你。30–45 秒。",
+    text: [
+      "It's not about running away from anything. It's about what I want next, which is growth.",
+      "",
+      "I learn best when I work alongside people I can look up to: a manager or senior colleagues who can be role models, and someone who will mentor me and push my thinking. That's what I'm actively looking for in my next step.",
+      "",
+      "I try to learn something every day. Even this interview is a test-and-learn for me: preparing for it, I built a small premium reconciliation demo and went deep into how insurance finance data flows.",
+      "",
+      "A CFO Transformation team, building automation and data foundations together with finance, is where I can learn the most and contribute at the same time.",
+    ].join("\n"),
+    short: "I'm looking for growth: people I can learn from, role models and a mentor. I learn something every day, and even this interview is a test-and-learn for me. This team is where I can learn the most and contribute at the same time.",
+  },
+};
