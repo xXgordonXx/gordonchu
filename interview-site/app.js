@@ -70,6 +70,8 @@
       t.rows.forEach((r) => { if (!isBlank(r[qi])) push({ cat, src: t.h2, q: r[qi], hint: hi >= 0 ? r[hi] : "", docAns: ai >= 0 && !isBlank(r[ai]) ? r[ai] : "" }); });
     }
     (window.EXTRA_QS || []).forEach((x) => push(Object.assign({ src: "補充題" }, x)));
+    const first = qs.findIndex((q) => /^tell me about yourself/i.test(q.q));
+    if (first > 0) qs.unshift(qs.splice(first, 1)[0]);
     return qs;
   }
   const QUESTIONS = buildQuestions();
